@@ -1,0 +1,14 @@
+name: AlfredGPT
+identifier: com.nrvb.popclip.extension.alfred-gpt
+description: Send selected text to Alfred OpenAI workflow to start a new chat.
+popclip version: 4151
+icon: alfredgpt.png
+app:
+  name: Alfred
+  link: "https://www.alfredapp.com"
+  bundleIdentifier: com.runningwithcrayons.Alfred
+  checkInstalled: true
+applescript: |
+  tell application id "com.runningwithcrayons.Alfred"
+    run trigger "new_chat" in workflow "com.alfredapp.vitor.openai" with argument "{popclip text}"
+  end tell
